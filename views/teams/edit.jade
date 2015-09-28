@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+
+  h1 Edit Team
+
+  form(action='/teams/' + theTeam._id + '/edit' method='post')
+    label(for='teamname') Team Name:
+    input(type='text' id='teamname' name='teamname' value=theTeam.name)
+    p
+    label(for='city') City:
+    input(type='text' id='city' name='city' value=theTeam.city)
+    p
+    label(for='wins') Wins:
+    input(type='number' id='wins' name='wins' value=theTeam.wins)
+    p
+    label(for='losses') Losses:
+    input(type='number' id='losses' name='losses' value=theTeam.losses)
+    p
+    label(for='yearEst') Year Established:
+    input(type='text' id='yearEst' name='yearEst' value=theTeam.yearest)
+    p
+    input(type='submit')

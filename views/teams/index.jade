@@ -14,7 +14,8 @@ block content
     tbody
       for team in allTeams
         tr
-          th= team.name
+          th
+            a(href='teams/' + team._id)= team.name
           th= team.city
           th= team.wins
           th= team.losses

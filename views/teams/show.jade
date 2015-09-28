@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+
+  h1= theTeam.name
+  p
+  p=theTeam.city
+  p=theTeam.wins
+  p=theTeam.losses
+  p=theTeam.yearest
+
+  a(href='/teams/' + theTeam._id + '/edit') Edit Team
+  p
+  a(href='/teams') List of Teams

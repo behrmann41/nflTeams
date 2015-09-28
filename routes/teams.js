@@ -25,4 +25,29 @@ router.post('/new', function (req, res, next) {
   res.redirect('/teams');
 })
 
+router.get('/:id', function (req, res, next){
+  proTeams.findOne({_id: req.params.id}, function (err,data){
+    res.render('teams/show', {theTeam: data})
+  }) 
+})
+
+router.get('/:id/edit', function (req, res, next){
+  proTeams.findOne({_id: req.params.id}, function (err, data){
+    res.render('teams/edit', {theTeam: data})
+  })
+})
+
+router.post('/:id/edit', function (req, res, next){
+  proTeams.updateById(req.params.id, {name: req.body.teamname,
+                                      city: req.body.city,
+                                      wins: req.body.wins,
+                                      losses: req.body.losses,
+                                      yearest: req.body.yearEst
+                                      }, function (err, data){
+  res.redirect('/teams/' + req.params.id);
+  })
+})
+
+
+
 module.exports = router;
