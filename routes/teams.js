@@ -48,6 +48,12 @@ router.post('/:id/edit', function (req, res, next){
   })
 })
 
+router.post('/:id/delete', function (req, res, next){
+  proTeams.remove({_id: req.params.id}, function (err, data){
+    res.redirect('/teams')
+  })
+})
+
 
 
 module.exports = router;
