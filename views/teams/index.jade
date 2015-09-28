@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+
+  h1= title
+
+  table
+    thead
+      tr
+        th Team
+        th City
+        th Wins
+        th Losses
+    tbody
+      for team in allTeams
+        tr
+          th= team.name
+          th= team.city
+          th= team.wins
+          th= team.losses
+          th= team.yearest
+
+  a(href='teams/new') Add a Team
+  p
+  a(href='/') Home

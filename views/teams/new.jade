@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+  h1= title
+
+  form(action='/teams/new' method='post')
+    label(for='teamname') Team Name:
+    input(type='text' id='teamname' name='teamname')
+    p
+    label(for='city') City:
+    input(type='text' id='city' name='city')
+    p
+    label(for='wins') Wins:
+    input(type='number' id='wins' name='wins')
+    p
+    label(for='losses') Losses:
+    input(type='number' id='losses' name='losses')
+    p
+    label(for='yearEst') Year Established:
+    input(type='text' id='yearEst' name='yearEst')
+    p
+    input(type='submit')
+
+    a(href='/teams') Cancel
